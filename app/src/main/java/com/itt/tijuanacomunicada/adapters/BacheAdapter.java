@@ -3,11 +3,13 @@ package com.itt.tijuanacomunicada.adapters;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,9 +25,9 @@ public class BacheAdapter extends FirestoreRecyclerAdapter<BachesModel, BacheAda
 
     @Override
     protected void onBindViewHolder(@NonNull BacheAdapter.ViewHolder holder, int position, @NonNull BachesModel model) {
-        holder.lblLongitud.setText("Longitud: " + model.getLongitud());
-        holder.lblLatitud.setText("Latitud: " + model.getLatitud());
         try {
+            holder.lblLongitud.setText("Longitud: " + model.getLongitud());
+            holder.lblLatitud.setText("Latitud: " + model.getLatitud());
             byte[] decodedBytes = Base64.decode(
                     model.getPhoto().substring(model.getPhoto().indexOf(",") + 1),
                     Base64.DEFAULT
@@ -33,14 +35,14 @@ public class BacheAdapter extends FirestoreRecyclerAdapter<BachesModel, BacheAda
             Bitmap bmp = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
             holder.imgHole.setImageBitmap(bmp);
         } catch (Exception e) {
-            // TODO
+            Toast.makeText(null, "No se pudo cargar la informacion", Toast.LENGTH_LONG).show();
         }
     }
 
     @NonNull
     @Override
     public BacheAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View viewRoot = LayoutInflater.from(parent.getContext()).inflate(R.layout.hole_item, parent, false);
+        View viewRoot = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_hole_single, parent, false);
         return new ViewHolder(viewRoot);
     }
 
