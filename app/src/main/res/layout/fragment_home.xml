@@ -3,9 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
-    <ListView
-        android:id="@+id/lvHole"
+    tools:context=".tabs.HomeFragment">
+    <LinearLayout
+        android:gravity="center"
+        android:padding="16dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/lblLatitud"
+                android:text="Latitud: 0"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/lblLongitud"
+                android:text="Longitud: 0"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginTop="12dp"
+            android:id="@+id/btnLocation"
+            android:text="Seleccionar locacion"
+            android:textColor="#fff"
+            android:background="@drawable/btn_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_marginTop="12dp"
+            android:id="@+id/imgBache"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginTop="12dp"
+            android:id="@+id/btnImage"
+            android:text="Seleccionar Imagen"
+            android:textColor="#fff"
+            android:background="@drawable/btn_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginTop="12dp"
+            android:id="@+id/btnAdd"
+            android:text="Agregar"
+            android:textColor="#fff"
+            android:background="@drawable/btn_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 </FrameLayout>

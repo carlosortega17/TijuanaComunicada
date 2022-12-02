@@ -1,33 +1,34 @@
-package com.itt.tijuanacomunicada;
+package com.itt.tijuanacomunicada.tabs;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.itt.tijuanacomunicada.R;
 
-public class HomeFragment extends Fragment {
-    private List<String> test = new ArrayList<String>();
+public class HoleFragment extends Fragment {
 
-    public HomeFragment() {
+    private RecyclerView rvHoleList;
+
+    public HoleFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.hole_item);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View viewRoot = inflater.inflate(R.layout.fragment_hole, container, false);
+        rvHoleList = viewRoot.findViewById(R.id.rvHoleList);
+        return viewRoot;
     }
 }

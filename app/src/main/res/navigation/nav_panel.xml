@@ -6,7 +6,17 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.itt.tijuanacomunicada.HomeFragment"
+        android:name="com.itt.tijuanacomunicada.tabs.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.itt.tijuanacomunicada.tabs.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/holeFragment"
+        android:name="com.itt.tijuanacomunicada.tabs.HoleFragment"
+        android:label="fragment_hole"
+        tools:layout="@layout/fragment_hole" />
 </navigation>
