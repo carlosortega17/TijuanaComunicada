@@ -35,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final String email = tbxEmail.getText().toString();
                 final String password = tbxPassword.getText().toString();
-                AuthService.Login(MainActivity.this, email, password);
-                GoToPanel();
+                AuthService.Login(MainActivity.this, email, password, MainActivity.this);
             }
         });
         btnRegister.setOnClickListener(new View.OnClickListener() {

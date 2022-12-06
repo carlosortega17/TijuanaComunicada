@@ -2,6 +2,7 @@ package com.itt.tijuanacomunicada;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -13,6 +14,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.itt.tijuanacomunicada.databinding.ActivityMapsBinding;
+import com.itt.tijuanacomunicada.tabs.HoleFragment;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -52,5 +54,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         CameraPosition cameraPosition = new CameraPosition.Builder().target(bache).zoom(18.0f).build();
         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition);
         mMap.moveCamera(cameraUpdate);
+    }
+
+    @Override
+    public void onBackPressed() {
+        PanelActivity.currentTab = 1;
+        Intent intent = new Intent(this, PanelActivity.class);
+        startActivity(intent);
     }
 }
