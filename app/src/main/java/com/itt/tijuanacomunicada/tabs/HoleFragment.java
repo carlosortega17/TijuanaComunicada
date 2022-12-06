@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,8 +39,10 @@ public class HoleFragment extends Fragment {
         View viewRoot = inflater.inflate(R.layout.fragment_hole, container, false);
         firestore = FirebaseFirestore.getInstance();
         rvHoleList = viewRoot.findViewById(R.id.rvHoleList);
+        //rvHoleList.setHasFixedSize(false);
         rvHoleList.setLayoutManager(new LinearLayoutManager(viewRoot.getContext()));
         Query query = firestore.collection("holes");
+        Log.d("HOLA",query.toString());
         FirestoreRecyclerOptions<BachesModel> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<BachesModel>().setQuery(query, BachesModel.class).build();
         bacheAdapter = new BacheAdapter(firestoreRecyclerOptions);

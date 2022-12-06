@@ -200,4 +200,38 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+    }
+    @Override
+    public void onStart(){
+        super.onStart();
+        //Log.d(TAG,"onStart() llamado");
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        //Log.d(TAG,"onResume() llamado");
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        //Log.d(TAG,"onStop() llamado");
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        //Log.d(TAG,"onStart() llamado");
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        //Log.d(TAG,"onDestroy() llamado");
+    }
 }

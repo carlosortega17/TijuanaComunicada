@@ -51,8 +51,14 @@ public class MainActivity extends AppCompatActivity {
     private void GoToPanel() {
         if (AuthService.IsAuth()) {
             Intent intent = new Intent(MainActivity.this, PanelActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     @Override

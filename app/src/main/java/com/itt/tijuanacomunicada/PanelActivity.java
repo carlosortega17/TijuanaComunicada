@@ -37,7 +37,7 @@ public class PanelActivity extends AppCompatActivity {
                     case R.id.profileFragment : temp = new ProfileFragment();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, temp).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, temp).addToBackStack(null).commit();
                 return true;
             }
         });
